@@ -57,7 +57,7 @@ Let us start by observing that extreme posit values correspond to the bits of th
 number length. In the illustration above, value 64 is composed of 4 bits regime, leaving just one sign bit in 
 the 5-bit number. Similarly in the largest 32-bit number the regime occupies 31 bits.
 
-Therefore my suggestion is to introduce U, the maximum number of bits in the regime.
+Therefore my contribution is to introduce U, the maximum number of bits in the regime.
 
 If the regime does not consume all bits at the extremity of the range there is an opportunity to introduce 
 intermediate values by utilising the remaining bits.
@@ -95,8 +95,8 @@ The dynamic range has reduced, but the gap between extreme numbers has reduced t
 
 How does it translate to a 32-bit number?
 
-Let us take nbits=32, es=2 and U=10. The largest number it can express is ≅1.65⨯10<sup>12</sup>. The gap to 
-the next largest value is 2097152 units. There is still over 5 decimal digits precision at this extreme, in 
+Let us take nbits=32, es=2 and U=16. The largest number it can express is ≅2.77⨯10<sup>19</sup>. The gap to 
+the next largest value is ≅2.25⨯10<sup>15</sup>. There is still four decimal digits precision at this extreme, in 
 stark contrast with standard posits!
 
 If the range is too narrow, increasing either es or U makes it wider. Increasing es has more effect on the 
@@ -108,5 +108,5 @@ The largest 32-bit number with two bit exponent and the maximal regime size (U=2
 The gap to the next largest value is ≅2.08⨯10<sup>34</sup>. We are not at the level of standard posits where 
 the gap is of the same order as the largest value but it is getting closer.
 
-If the exponent size is increased instead, with es=3 and U=10 the largest number is ≅1.81⨯10<sup>24</sup> 
-and the gap to the next number is ≅4.61⨯10<sup>18</sup>.
+If the exponent size is increased instead, with es=3 and U=16 the largest number is ≅5.10⨯10<sup>38</sup> 
+and the gap to the next number is ≅8.31⨯10<sup>34</sup>.
