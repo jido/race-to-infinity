@@ -110,3 +110,10 @@ the gap is of the same order as the largest value but it is getting closer.
 
 If the exponent size is increased instead, with es=3 and U=16 the largest number is ≅5.10⨯10<sup>38</sup> 
 and the gap to the next number is ≅8.31⨯10<sup>34</sup>.
+
+## Compatibility
+
+Posits extended with the U value are compatible with standard posits when _es = 0_ and _U = nbits - 1_.
+
+A variation of this proposal allows U to take any value _U < nbits_, in which case standard posits are just 
+of subset of the extended posits where _U = nbits - 1_.
