@@ -70,8 +70,8 @@ As an exception, if all the bits of the regime and all the bits of the exponent 
 between consecutive numbers is doubled. This replaces the exception for a number where all bits are 0 in 
 standard posits. In that case the usual formula becomes:
 
-(-1)<sup>s</sup> × useed<sup>k</sup> × ( 2<sup>e+1</sup> × f - 2<sup>e+1-b</sup> ) where b is the value of 
-  the regime and exponent bit.
+(-1)<sup>s</sup> × useed<sup>k</sup> × ( 2<sup>e+1</sup> × f - 2<sup>e+1-b</sup> ) 
+_where_ b _is the numeral value of the regime and exponent bit._
 
 For example, let us take nbits=5, es=1 and U=2. The numbers in the top-right quadrant of the illustration become:
 
@@ -96,8 +96,8 @@ The dynamic range has reduced, but the gap between extreme numbers has reduced t
 How does it translate to a 32-bit number?
 
 Let us take nbits=32, es=2 and U=16. The largest number it can express is ≅2.77⨯10<sup>19</sup>. The gap to 
-the next largest value is ≅2.25⨯10<sup>15</sup>. There is still four decimal digits precision at this extreme, in 
-stark contrast with standard posits!
+the next largest value is ≅2.25⨯10<sup>15</sup>. There is still four decimal digits precision at this extreme, 
+in stark contrast with standard posits!
 
 If the range is too narrow, increasing either es or U makes it wider. Increasing es has more effect on the 
 dynamic range but reduces precision overall. Increasing U has less effect on the dynamic range and reduces 
@@ -105,8 +105,8 @@ precision at the extremes, to the point where it can become similar to standard 
 precision around number 1.
 
 The largest 32-bit number with two bit exponent and the maximal regime size (U=29) is ≅1.04⨯10<sup>35</sup>. 
-The gap to the next largest value is ≅2.08⨯10<sup>34</sup>. We are not at the level of standard posits where 
-the gap is of the same order as the largest value but it is getting closer.
+The gap to the next largest value is ≅2.08⨯10<sup>34</sup>. We are getting close to the level of standard 
+posits where the gap is of the same order as the largest value.
 
 If the exponent size is increased instead, with es=3 and U=16 the largest number is ≅5.10⨯10<sup>38</sup> 
 and the gap to the next number is ≅8.31⨯10<sup>34</sup>.
@@ -115,5 +115,5 @@ and the gap to the next number is ≅8.31⨯10<sup>34</sup>.
 
 Posits extended with the U value are compatible with standard posits when _es = 0_ and _U = nbits - 1_.
 
-A variation of this proposal allows U to take any value _U < nbits_, in which case standard posits are just 
-of subset of the extended posits where _U = nbits - 1_.
+A variation of this proposal allows the maximum bit size of the regime to take any value _U < nbits_, in 
+which case standard posits are just the subset of extended posits where _U = nbits - 1_.
